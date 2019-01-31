@@ -18,16 +18,15 @@ import static org.junit.Assert.assertNotNull;
 @ContextConfiguration(classes = {ApplicationConfig.class})
 public class PersonRessursComponentTest {
 
-    public static final String PERSON_ID = "1234567810";
+    public static final String PERSON_ID = "12345678910";
 
     // TODO initialiser denne med Spring
     PersonRessurs personRessurs;
 
     @Test
     public void geografiskTilknytningErSatt() {
-        String id = "1234567810";
-        PersonInfo personInfo = personRessurs.hentPersonInfo(id);
-        assertEquals(id, personInfo.getId());
+        PersonInfo personInfo = personRessurs.hentPersonInfo(PERSON_ID);
+        assertEquals(PERSON_ID, personInfo.getId());
         assertNotNull(personInfo.getGeografiskTilknytning());
     }
 
